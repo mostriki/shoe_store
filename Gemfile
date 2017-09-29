@@ -5,6 +5,7 @@ gem("sinatra-activerecord")
 gem("rake")
 gem("pg")
 gem("sinatra")
+require('pry')
 
 group(:test) do
   gem("shoulda-matchers", '~> 2.0')

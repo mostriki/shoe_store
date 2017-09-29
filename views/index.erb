@@ -21,8 +21,8 @@
         <h3 class="card-title">Store Locations:</h3>
         <% if @stores.any?() %>
         <ul>
-          <% @stores.each do |store_name| %>
-            <li><%= store_name.name %></a></li>
+          <% @stores.each do |store| %>
+            <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
           <% end %>
         </ul>
       <% else %>

@@ -1,0 +1,43 @@
+
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card" style="border-color: #FFF">
+      <div class="card-block">
+        <h3 class"card-title">Add a brand:</h3>
+        <form action="/stores/<%= @store.id %>" method="post">
+          <div class="form-group">
+            <label for="brand"></label>
+            <input type="text" name="brand" class="form-control" autofocus required>
+          </div>
+          <div class="form-group">
+            <label for="price"></label>
+            <input type="text" name="price" class="form-control" autofocus required>
+          </div>
+          <button type="submit" class="btn btn-info" data-toggle="button">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card" style="border-color: #FFF">
+      <div class="card-block">
+        <h2 class="card-title"><%= @store.name %> #<%= @store.id %></h2>
+        <% if @store.shoes.any?() %>
+        <h4 class="card-title">Available stock:</h4>
+        <ul>
+          <% @shoe.each do |name| %>
+            <li><a><%= name.brand %></a> <a><%= name.price %></a></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h4 class="card-title">No stock available!</h4>
+        <p>Enter the first item.</p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
