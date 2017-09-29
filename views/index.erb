@@ -14,3 +14,21 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card" style="border-color: #FFF">
+      <div class="card-block">
+        <h3 class="card-title">Store Locations:</h3>
+        <% if @stores.any?() %>
+        <ul>
+          <% @stores.each do |store_name| %>
+            <li><%= store_name.name %></a></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>There are no stores yet.</p>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12,17 +12,17 @@ end
 post('/') do
   name = params['name']
   @stores = Store.create({name: name})
-  erb(:index)
+  redirect('/')
 end
 
-get("/store/:id") do
-  @store = Project.find(params['id'].to_i())
-  erb(:store)
-end
-
-post("/store/:id") do
-  name = params['name']
-  volunteer = Shoe.create({brand: brand, price: price})
-  @store = Project.find(params['id'].to_i())
-  erb(:store)
-end
+# get("/stores/:id") do
+#   @store = Store.find(params['id'].to_i())
+#   erb(:store_info)
+# end
+#
+# post("/stores/:id") do
+#   name = params['name']
+#   volunteer = Shoe.create({brand: brand, price: price, id: nil})
+#   @store = Store.find(params['id'].to_i())
+#   erb(:store_info)
+# end
