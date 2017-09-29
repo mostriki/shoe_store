@@ -3,5 +3,7 @@ a:hover {
 }
 
 .jumbotron {
-  text-align: center;
+  /*text-align: center;*/
+  font-family: 'Amatic SC', cursive;
+  /*font-size: 3vw;*/
 }
