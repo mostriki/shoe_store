@@ -2,8 +2,9 @@ a:hover {
   text-decoration: none;
 }
 
-.jumbotron {
-  /*text-align: center;*/
-  font-family: 'Amatic SC', cursive;
-  /*font-size: 3vw;*/
+.navbar-brand {
+  text-align: center;
+  font-family: 'Amatic SC', cursive !important;
+  font-size: 8vw;
+  background-color: white;
 }

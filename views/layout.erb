@@ -2,13 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link rel="stylesheet" text="text/css" href="<%= url('/styles.css') %>">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
     <title>Shoe Inventory Tracker</title>
   </head>
   <body>
-    <div class="container">
+    <nav class="navbar navbar-light bg-faded sticky-top" style="background-color: #FFF">
+      <a class="navbar-brand" href="/">Deadstock</a>
+    </nav><br><br>
+
+    <div id="body" class="container">
       <%= yield %>
     </div>
   </body>
