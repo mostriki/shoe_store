@@ -1,5 +1,24 @@
-
-
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card" style="border-color: #FFF">
+      <div class="card-block">
+        <h3 class"card-title">Update <%= @store.name %> #<%= @store.id %></h3>
+        <form action="/stores/<%= @store.id %>/update" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <div class="form-group">
+            <label for="name"></label>
+            <input type="text" name="name" class="form-control" autofocus required>
+          </div>
+          <button type="submit" class="btn btn-info" data-toggle="button">Update</button>
+        </form><br>
+        <form action="/stores/<%= @store.id %>/delete" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="btn btn-info" data-toggle="button">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="row">
   <div class="col-sm-12">
@@ -21,11 +40,11 @@
     </div>
   </div>
 </div>
+
 <div class="row">
   <div class="col-sm-12">
     <div class="card" style="border-color: #FFF">
       <div class="card-block">
-        <h2 class="card-title"><%= @store.name %> #<%= @store.id %></h2>
         <% if @store.shoes.any?() %>
         <h4 class="card-title">Available stock:</h4>
         <ul>
