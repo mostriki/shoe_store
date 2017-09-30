@@ -10,7 +10,7 @@ get('/') do
   erb(:index)
 end
 
-post('/') do
+post('/test') do
   name = params['name']
   @stores = Store.create({name: name})
   redirect('/')
@@ -18,14 +18,15 @@ end
 
 get("/stores/:id") do
   @store = Store.find(params[:id])
+  @shoes = Shoe.all
   erb(:store)
 end
 
 post("/stores/:id") do
-  @store = Store.find(params[:id])
   name = params['brand']
   price = params['price']
+  @store = Store.find(params[:id])
   @shoe = Shoe.create({brand: name, price: price})
-  @store.shoes.push(shoe)
+  @store.shoes.push(@shoe)
   erb(:store)
 end

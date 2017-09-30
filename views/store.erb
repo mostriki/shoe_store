@@ -29,8 +29,8 @@
         <% if @store.shoes.any?() %>
         <h4 class="card-title">Available stock:</h4>
         <ul>
-          <% @shoe.each do |name| %>
-            <li><a><%= name.brand %></a> <a><%= name.price %></a></li>
+          <% @store.shoes.each do |name| %>
+            <li><a><%= name.brand %></a> <a>$<%= '%.02f' % name.price %></a></li>
           <% end %>
         </ul>
       <% else %>
