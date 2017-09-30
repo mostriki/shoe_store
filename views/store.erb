@@ -2,7 +2,7 @@
   <div class="col-sm-12">
     <div class="card" style="border-color: #FFF">
       <div class="card-block">
-        <h3 class"card-title">Update <%= @store.name %> #<%= @store.id %></h3>
+        <h3 class"card-title">Update <%= @store.name %> Store #<%= @store.id %></h3>
         <form action="/stores/<%= @store.id %>/update" method="post">
           <input type="hidden" name="_method" value="patch">
           <div class="form-group">
@@ -24,7 +24,7 @@
   <div class="col-sm-12">
     <div class="card" style="border-color: #FFF">
       <div class="card-block">
-        <h3 class"card-title">Add a brand:</h3>
+        <h3 class"card-title">Add to brand inventory:</h3>
         <form action="/stores/<%= @store.id %>" method="post">
           <div class="form-group">
             <label for="brand"></label>
@@ -49,7 +49,7 @@
         <h4 class="card-title">Available stock:</h4>
         <ul>
           <% @store.shoes.each do |name| %>
-            <li><a><%= name.brand %></a> <a>$<%= '%.02f' % name.price %></a></li>
+            <li><a href="/brand/<%= name.id %>"><%= name.brand %></a> <a>$<%= '%.02f' % name.price %></a></li>
           <% end %>
         </ul>
       <% else %>

@@ -7,6 +7,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
   @stores = Store.all
+  # @shoes = Shoe.all
   erb(:index)
 end
 
@@ -40,4 +41,15 @@ patch("/stores/:id/update") do
   @store = Store.find(params[:id])
   Store.update({name: name})
   redirect("/stores/#{@store.id}")
+end
+
+get('/brand/:id') do
+  @shoe = Shoe.find(params[:id])
+  @stores = Store.all
+  erb(:shoe)
+end
+
+post('/brand/:id') do
+  store = params['store']
+  redirect('/')
 end
