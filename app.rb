@@ -15,7 +15,11 @@ end
 post('/stores') do
   name = params['name']
   @stores = Store.create({name: name})
-  redirect('/')
+  if @stores.save
+    redirect('/')
+  else
+    erb(:store_error)
+  end
 end
 
 get("/stores/:id") do
@@ -58,5 +62,6 @@ end
 
 get("/brand/:id/delete") do
   Shoe.destroy(params[:id])
-  redirect("/stores/#{@store.id}")
+# works but doesn't redirect("/stores/#{@store.id}")
+  redirect("/")
 end
