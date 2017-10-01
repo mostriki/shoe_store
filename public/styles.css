@@ -7,3 +7,7 @@ a:hover {
   font-family: 'Amatic SC', cursive !important;
   font-size: 8vw;
 }
+
+.card-group {
+  /*text-align: center;*/
+}

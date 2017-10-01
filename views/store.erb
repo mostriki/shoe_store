@@ -46,10 +46,57 @@
     <div class="card" style="border-color: #FFF">
       <div class="card-block">
         <% if @store.shoes.any?() %>
-        <h4 class="card-title">Available stock:</h4>
+        <h3 class="card-title">Available stock:</h3><br>
         <ul>
+          <div class="card-group">
+            <div class="card" style="border-color: #FFF">
+              <div class="card-body">
+                <h4 class="card-text">Name</a></h4>
+              </div>
+            </div>
+            <div class="card" style="border-color: #FFF">
+              <div class="card-body">
+                <h4 class="card-text">Price</h4>
+              </div>
+            </div>
+            <div class="card" style="border-color: #FFF">
+              <div class="card-body">
+                <h4 class="card-text">Created</h4>
+              </div>
+            </div>
+            <div class="card" style="border-color: #FFF">
+              <div class="card-body">
+                <h4 class="card-text">Updated</h4>
+              </div>
+            </div>
+          </div>
+        </ul>
+        <ul style="list-style: none;">
           <% @store.shoes.each do |name| %>
-            <li><a href="/brand/<%= name.id %>"><%= name.brand %></a> <a>$<%= '%.02f' % name.price %></a></li>
+            <li>
+              <div class="card-group">
+                <div class="card" style="border-color: #FFF">
+                  <div class="card-body">
+                    <p class="card-text"><a href="/brand/<%= name.id %>"><%= name.brand %></a></p>
+                  </div>
+                </div>
+                <div class="card" style="border-color: #FFF">
+                  <div class="card-body">
+                    <p class="card-text"><a>$<%= '%.02f' % name.price %></a></p>
+                  </div>
+                </div>
+                <div class="card" style="border-color: #FFF">
+                  <div class="card-body">
+                    <p class="card-text"><%= name.created_at%></p>
+                  </div>
+                </div>
+                <div class="card" style="border-color: #FFF">
+                  <div class="card-body">
+                    <p class="card-text"><%= name.updated_at%></p>
+                  </div>
+                </div>
+              </div>
+            </li>
           <% end %>
         </ul>
       <% else %>
