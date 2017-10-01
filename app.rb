@@ -11,6 +11,7 @@ get('/') do
   erb(:index)
 end
 
+# Create and edit store locations
 post('/stores') do
   name = params['name']
   @stores = Store.create({name: name})
@@ -32,7 +33,7 @@ post("/stores/:id") do
 end
 
 delete("/stores/:id/delete") do
-  Store.delete(params[:id])
+  Store.destroy(params[:id])
   redirect('/')
 end
 
@@ -43,6 +44,7 @@ patch("/stores/:id/update") do
   redirect("/stores/#{@store.id}")
 end
 
+# Create and edit shoe brands
 get('/brand/:id') do
   @shoe = Shoe.find(params[:id])
   @stores = Store.all
@@ -52,4 +54,9 @@ end
 post('/brand/:id') do
   store = params['store']
   redirect('/')
+end
+
+get("/brand/:id/delete") do
+  Shoe.destroy(params[:id])
+  redirect("/stores/#{@store.id}")
 end

@@ -69,7 +69,12 @@
                 <h4 class="card-text">Updated</h4>
               </div>
             </div>
-          </div>
+            <div class="card" style="border-color: #FFF">
+              <div class="card-body">
+                <h4 class="card-text">Delete</h4>
+              </div>
+            </div>
+          </div><br>
         </ul>
         <ul style="list-style: none;">
           <% @store.shoes.each do |name| %>
@@ -95,7 +100,12 @@
                     <p class="card-text"><%= name.updated_at%></p>
                   </div>
                 </div>
-              </div>
+                <div class="card" style="border-color: #FFF">
+                  <div class="card-body">
+                    <p><a href="/brand/<%= name.id %>">edit |</a><a href="/brand/<%= name.id %>/delete"> delete</a></p>
+                  </div>
+                </div>
+              </div><br>
             </li>
           <% end %>
         </ul>
