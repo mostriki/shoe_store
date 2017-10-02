@@ -11,6 +11,10 @@
           </div>
           <button type="submit" class="btn btn-info" data-toggle="button">Update</button>
         </form><br>
+        <form action="/brand/<%= @shoe.id %>/delete" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="btn btn-info" data-toggle="button">Delete</button>
+        </form>
       </div>
     </div>
   </div>

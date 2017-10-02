@@ -71,11 +71,7 @@ patch('/brand/:id') do
   erb(:shoe)
 end
 
-# get("/brand/:id/delete") do
-#   # binding.pry
-#   @store = Store.find(params[:id])
-#   @store.shoes.destroy
-#   Shoe.destroy(params[:id])
-# # works but doesn't redirect("/stores/#{@store.id}")
-#   redirect("/stores/#{@store.id}")
-# end
+delete("/brand/:id/delete") do
+  Shoe.destroy(params[:id])
+  redirect("/")
+end
