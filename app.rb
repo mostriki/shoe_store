@@ -60,8 +60,11 @@ post('/brand/:id') do
   redirect('/')
 end
 
-get("/brand/:id/delete") do
-  Shoe.destroy(params[:id])
-# works but doesn't redirect("/stores/#{@store.id}")
-  redirect("/")
-end
+# get("/brand/:id/delete") do
+#   # binding.pry
+#   @store = Store.find(params[:id])
+#   @store.shoes.destroy
+#   Shoe.destroy(params[:id])
+# # works but doesn't redirect("/stores/#{@store.id}")
+#   redirect("/stores/#{@store.id}")
+# end
