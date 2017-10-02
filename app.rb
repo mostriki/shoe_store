@@ -60,6 +60,17 @@ post('/brand/:id') do
   redirect('/')
 end
 
+patch('/brand/:id') do
+  @shoe = Shoe.find(params[:id])
+  @shoe.stores.clear
+  params[:stores].each do |store_id|
+    store = Store.find(store_id)
+    @shoe.stores.push(store)
+  end
+  @stores = Store.all
+  erb(:shoe)
+end
+
 # get("/brand/:id/delete") do
 #   # binding.pry
 #   @store = Store.find(params[:id])

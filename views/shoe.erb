@@ -20,14 +20,22 @@
   <div class="col-sm-12">
     <div class="card" style="border-color: #FFF">
       <div class="card-block">
-        <% if @stores.any? %>
-          <% @stores.each do |store| %>
-            <div>
-              <input type="checkbox" name="store" value="store.id">
-              <label for="store"><%= store.name %></label>
-            </div>
+        <form action="/brand/<%= @shoe.id %>" method="post">
+          <input type="hidden" name="_method" value="patch">
+          <% if @stores.any? %>
+            <% @stores.each do |store| %>
+              <div>
+                <input type="checkbox" name="stores[]" value="<%=store.id%>"
+                <% if @shoe.stores.include? store %>
+                checked="true"
+                <% end %>
+                >
+                <label for="store"><%= store.name %></label>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
+          <button type="submit" name="btn btn-info">Submit</button>
+        </form>
       </div>
     </div>
   </div>
